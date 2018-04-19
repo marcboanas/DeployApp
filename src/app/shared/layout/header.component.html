@@ -2,7 +2,9 @@
   <div class="container">
     <a class="navbar-brand" routerLink="/">Ideas For Kids Parties</a>
 
-    <ul class="nav navbar-nav pull-xs-right">
+    <!-- Show this for logged out users -->
+
+    <ul *showAuthed="false">
 
       <li class="nav-item">
         <a class="nav-link"
@@ -27,6 +29,28 @@
         </a>
       </li>
 
+    </ul>
+
+    <!-- Show this for logged in users -->
+    <ul *showAuthed="true">
+      <li class="nav-item">
+        <a class="nav-link"
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          Settings
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          Profile
+        </a>
+      </li>
     </ul>
 
   </div>
